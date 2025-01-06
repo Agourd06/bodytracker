@@ -43,7 +43,8 @@
     "expo-dev-client": "~5.0.8",
     "expo-insights": "~0.8.1",
     "expo-updates": "~0.26.10",
-    "expo-image": "~2.0.3"
+    "expo-image": "~2.0.3",
+    "@react-native-async-storage/async-storage": "1.23.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

@@ -4,19 +4,31 @@ import { Tabs } from "expo-router";
 export default function TabLayout() {
   return (
     <Tabs
-    screenOptions={{
-      tabBarActiveTintColor: '#ffd33d',
-      headerStyle: {
-        backgroundColor: '#25292e',
-      },
-      headerShadowVisible: false,
-      headerTintColor: '#fff',
-      tabBarStyle: {
-      backgroundColor: '#25292e',
-      },
-    }}
-  >
-  
+      screenOptions={{
+        tabBarActiveTintColor: "#ffd33d",
+        tabBarInactiveTintColor: "#888",
+        headerStyle: {
+          backgroundColor: "#25292e",
+        },
+        headerShadowVisible: false,
+        headerTintColor: "#fff",
+        tabBarStyle: {
+          backgroundColor: "#25292e",
+          borderTopWidth: 0,
+          elevation: 0,
+          height: 60,
+          paddingBottom: 8,
+          paddingTop: 8,
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontWeight: "500",
+        },
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
@@ -30,18 +42,30 @@ export default function TabLayout() {
           ),
         }}
       />
+    
       <Tabs.Screen
-        name="about"
+        name="profile"
         options={{
-          title: "About",
-          href: "/about",
+          title: "Profile",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons
-              name={
-                focused ? "information-circle" : "information-circle-outline"
-              }
+              name={focused ? "person" : "person-outline"}
               color={color}
               size={24}
+            />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="body-metrics"
+        options={{
+          title: "Mesures",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "body" : "body-outline"}
+              size={24}
+              color={color}
             />
           ),
         }}
