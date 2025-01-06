@@ -1,32 +1,35 @@
-import { Link, Stack } from 'expo-router';
-import { StyleSheet } from 'react-native';
+import { Link, Stack } from "expo-router";
+import { StyleSheet, Text, View } from "react-native";
 
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function NotFoundScreen() {
+export default function NotFound() {
   return (
     <>
-      <Stack.Screen options={{ title: 'Oops!' }} />
-      <ThemedView style={styles.container}>
-        <ThemedText type="title">This screen doesn't exist.</ThemedText>
-        <Link href="/" style={styles.link}>
-          <ThemedText type="link">Go to home screen!</ThemedText>
-        </Link>
-      </ThemedView>
+      <Stack.Screen options={{ title: "Oop Not found" }} />
+      <View style={styles.container}>
+        <Text style={styles.text}>404</Text>
+        <Link href={'/' as any} style={styles.button}>
+          Go Back To Home Page
+        </Link> 
+      </View>
     </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  button: {
+    fontSize: 20,
+    textDecorationLine: "underline",
+    color: "#fff",
+  },
+   container: {
     flex: 1,
-    alignItems: 'center',
+    backgroundColor: '#25292e',
     justifyContent: 'center',
-    padding: 20,
+    alignItems: 'center',
   },
-  link: {
-    marginTop: 15,
-    paddingVertical: 15,
-  },
+  text : {
+    color : "#fff",
+    fontSize : 60, 
+    fontWeight : "bold"
+  }
 });
