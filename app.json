@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "HelloWorld",
-    "slug": "expo-template-default",
+    "name": "BodyTracker",
+    "slug": "bodytracker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,13 +9,15 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.oualidagourd.bodytracker"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.oualidagourd.bodytracker"
     },
     "web": {
       "bundler": "metro",
@@ -36,6 +38,18 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2cf834d4-7641-488a-a565-7bc20b7350df"
+      }
+    },
+    "owner": "oualidagourd",
+    "updates": {
+      "url": "https://u.expo.dev/2cf834d4-7641-488a-a565-7bc20b7350df"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
     }
   }
 }
