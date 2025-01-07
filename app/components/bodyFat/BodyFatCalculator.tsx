@@ -23,7 +23,7 @@ export function BodyFatCalculator({ user, setUser }: BodyFatCalculatorProps) {
         
         return bodyFat > 0 ? parseFloat(bodyFat.toFixed(1)) : null;
       } else {
-        // Formule pour les femmes
+        // Formule pour les femmes .
         const hip = parseFloat(user.tourHanche || '0');
         if (!hip) return null;
 
