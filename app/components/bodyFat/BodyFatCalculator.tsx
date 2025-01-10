@@ -9,16 +9,15 @@ interface BodyFatCalculatorProps {
 
 export function BodyFatCalculator({ user, setUser }: BodyFatCalculatorProps) {
   const calculateBodyFat = (): number | null => {
-    const height = parseFloat(user.taille); // en cm
-    const waist = parseFloat(user.tourTaille); // en cm
-    const neck = parseFloat(user.tourCou); // en cm
-
+    const height = parseFloat(user.taille); 
+    const waist = parseFloat(user.tourTaille); 
+    const neck = parseFloat(user.tourCou); 
     if (!height || !waist || !neck) return null;
 
     try {
       if (user.sexe === 'homme') {
         // Formule pour les hommes
-        const abdominalNeck = Math.max(waist - neck, 0); // Éviter les valeurs négatives
+        const abdominalNeck = Math.max(waist - neck, 0); 
         const bodyFat = 495 / (1.0324 - 0.19077 * Math.log10(abdominalNeck) + 0.15456 * Math.log10(height)) - 450;
         
         return bodyFat > 0 ? parseFloat(bodyFat.toFixed(1)) : null;
@@ -27,7 +26,7 @@ export function BodyFatCalculator({ user, setUser }: BodyFatCalculatorProps) {
         const hip = parseFloat(user.tourHanche || '0');
         if (!hip) return null;
 
-        const sumMeasures = Math.max(waist + hip - neck, 0); // Éviter les valeurs négatives
+        const sumMeasures = Math.max(waist + hip - neck, 0); 
         const bodyFat = 495 / (1.29579 - 0.35004 * Math.log10(sumMeasures) + 0.22100 * Math.log10(height)) - 450;
         
         return bodyFat > 0 ? parseFloat(bodyFat.toFixed(1)) : null;

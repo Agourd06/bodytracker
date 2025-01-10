@@ -71,7 +71,7 @@ export function ProfileForm({ user, setUser }: ProfileFormProps) {
       </View>
 
       {/* Champs pour le calcul de graisse corporelle */}
-      <View style={styles.inputContainer}>
+      {/* <View style={styles.inputContainer}>
         <Text style={styles.label}>Tour de taille (cm)</Text>
         <TextInput
           style={styles.input}
@@ -93,8 +93,8 @@ export function ProfileForm({ user, setUser }: ProfileFormProps) {
           value={user.tourCou}
           onChangeText={(text) => setUser({ ...user, tourCou: text })}
         />
-      </View>
-
+      </View> */}
+{/* 
       {user.sexe === 'femme' && (
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Tour de hanche (cm)</Text>
@@ -107,7 +107,7 @@ export function ProfileForm({ user, setUser }: ProfileFormProps) {
             onChangeText={(text) => setUser({ ...user, tourHanche: text })}
           />
         </View>
-      )}
+      )} */}
     </>
   );
 }

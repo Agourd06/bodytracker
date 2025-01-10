@@ -26,6 +26,7 @@
     },
     "plugins": [
       "expo-router",
+      
       [
         "expo-splash-screen",
         {
@@ -33,6 +34,20 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Permettre à $(PRODUCT_NAME) d'accéder à votre caméra"
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Permettre à $(PRODUCT_NAME) d'accéder à vos photos",
+          "savePhotosPermission": "Permettre à $(PRODUCT_NAME) de sauvegarder des photos",
+          "isAccessMediaLocationEnabled": true
         }
       ]
     ],

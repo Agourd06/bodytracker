@@ -70,6 +70,20 @@ export default function TabLayout() {
           ),
         }}
       />
+      <Tabs.Screen
+        name="photos"
+        options={{
+          title: "Photos",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "camera" : "camera-outline"}
+              size={24}
+              color={color}
+            />
+          ),
+        }}
+      />
     </Tabs>
+    
   );
 }
